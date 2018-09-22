@@ -21,10 +21,11 @@ Funcion_Inversa_OpElementales <- function(matrizA)
     j<-0
 
     aux<-0
- # Mientras el pivte sea menor o igual numero de columna de la MatrizA
+ # Mientras el pivote sea menor o igual numero de columna de la MatrizA
     while(dicPivote<=ncol(matrizA))
     { #Se inicia el bucle
 
+#NOTA: SI EN LA POSICION [1,1] hay un 0, se tiene que hacer intercambio de fila.
       if(matrizA[dicPivote,dicPivote]==0)#verificar si el pivote es 0
       {#Si la MatrizA en la posicion 1,1 es igual a 0
         #Entonces i y j pasan a valer 1
@@ -121,17 +122,22 @@ Funcion_Inversa_OpElementales <- function(matrizA)
           if(matrizA[dicPivote,dicPivote]!= 1)
             #Si en la posicion 2,2 es distinto de 1,
           {
-            c<-1
+            c <- 1
             pivote<-matrizA[dicPivote,dicPivote]
             while(c<=ncol(matrizA))
             {
-              aux<-1
-              valor<- matrizA[dicPivote,c]
-              valorIn<- matrixIn[dicPivote,c]
+              #NOTA: Esto se aplica en las posiciones por encima de la diagonal.
+              aux <- 1
+              valor <- matrizA[dicPivote,c]
+              valorIn <- matrixIn[dicPivote,c]
               #F1
+              # Una vez que se tienen los valores, se aplica la OPERACION ELEMENTAL de multiplicar
+              # un escalar por una fila con el fin de hacerla valer 1 en la posicion del pivote
+
+
               matrizA[dicPivote,c] <-  (  aux / pivote  * valor )
-              matrixIn[dicPivote,c]<-(aux/pivote*valorIn)
-              c<-c+1
+              matrixIn[dicPivote,c] <-(aux/pivote*valorIn)
+              c <- c+1
             }
 
           }
@@ -142,6 +148,8 @@ Funcion_Inversa_OpElementales <- function(matrizA)
 
           while(c>0)
           {
+            #Se aplica la operacion elemental de la suma de filas "n" veces
+            #NOTA: Se aplica con las posiciones por encima de la diagonal.
             aux<- matrizA[dicPivote,c]
             auxIn<- matrixIn[dicPivote,c]
 

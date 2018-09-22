@@ -64,6 +64,7 @@ Funcion_Inversa_MatricesElemen<- function(matrizA)
 
 
 
+
           }
 
         }#Fin de intercambio de filas
@@ -176,10 +177,14 @@ Funcion_Inversa_MatricesElemen<- function(matrizA)
     {
       print("El determinante de esta matriz es 0, por lo tanto no posee inversa")
     }
+
     View(matrizA)
     View(matrixIn)
     z <- 1
     w <- 0
+    print(is.matrix(Matrices[[z]]))
+    print(is.vector(Matrices[[z]]))
+    print(is.list(Matrices))
     while (!is.null(Matrices[[z]])){
       print( Matrices[[z]])
       z <- z+1
@@ -195,18 +200,22 @@ Funcion_Inversa_MatricesElemen<- function(matrizA)
 
       posMatrizUltima <- posMatrizUltima-1
     }
+    print(str(Matrices))
 
     posMatrizUltima <- z - 2
-    str(Matrices)
+     x_matrix <- matrix(as.vector(Matrices[[posMatrizUltima]]),nrow(matrixIn), ncol(matrixIn))
+     print(x_matrix)
     matrizFinal <-matrix(0,ncol(matrixIn),nrow (matrixIn))
-    matrizFinal <- matrizFinal + as.matrix(Matrices[[posMatrizUltima]])
+    matrizFinal <-  matrizFinal + x_matrix
+    print("Esta es la matriz final")
+
     while(posMatrizUltima>=1){
 
-      matrizFinal <-  matrizFinal%*% as.matrix(Matrices[[posMatrizUltima-1]])
-     posMatrizUltima <- posMatrizUltima -1
+      matrizFinal <-  matrizFinal%*% x_matrix(Matrices[[posMatrizUltima-1]],nrow(matrixIn),ncol(matrixIn))
+      posMatrizUltima <- posMatrizUltima -1
     }
     print("Matriz inversa por matrices elementales")
-    print(matrix)
+    print(matrizFinal)
 
 
   }else

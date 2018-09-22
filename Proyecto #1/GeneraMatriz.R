@@ -1,16 +1,11 @@
 
 GenerarMatriz<- function(m,n){
-
-  matrixA<- matrix(sample(-10:10,m*n,replace = T),m,n)
-  write.table(matrixA, file = "Matriz.txt")
-  return (matrixA)
+#Se crea una matriz con valores aleatorios de -99 a 99, los cuales se pueden repetir.
+  matrixA<- matrix(sample(-99:99,m*n,replace = T),m,n)
+  write.table(matrixA, file = "Matriz.txt") #Genera el archivo txt
+  View(matrixA)# Visualiza la matriz creada
+  return (matrixA) #Retorna la matrixA
 
 }#funcion para crear una matriz
 
 
-GenerarMatrizManual<-function(m,n)
-{
-  matrixA<- matrix(scan(),m*n,m,n)
-  write.table(matrixA, file = "Matriz.txt")
-  return (matrixA)
-}

@@ -2,16 +2,16 @@
 
 
 1#Permite generar la matriz
-# source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/GeneraMatriz.R")
-Matriz1<- GenerarMatriz(4,4)#Fucion para generar datos aleatorios en la matriz
-Matriz2<- GenerarMatriz(4,4)#Fucion para generar datos aleatorios en la matriz
+source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/GeneraMatriz.R")
+Matriz1<- GenerarMatriz(4,4)#Funcion para generar datos aleatorios en la matriz
+Matriz2<- GenerarMatriz(4,4)#Funcion para generar datos aleatorios en la matriz
 
 source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/GenerarMatriz_Ingresada.R")
 Matriz1<-GenerarMatrizManual(2,2)#Funcion para ingresar datos a la matriz
 Matriz2<-GenerarMatrizManual(2,2)#Funcion para ingresar datos a la matriz
 
 source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/FuncionSuma.R")
-FuncionSuma#Funcion para sumar dos matrices
+FuncionSuma(Matriz1,Matriz2)#Funcion para sumar dos matrices
 
 source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/FuncionResta.R")
 FuncionResta(Matriz1,Matriz2)#Funcion para restar dos matrices
@@ -36,3 +36,6 @@ InversaConUsoDelDeterminante(Matriz1)#Funcion para calcular la inversa de una fu
 
 source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/Funcion_Rango.R")
 Funcion_Rango(Matriz1)#Funcion para calcular el rango de una matriz
+
+source("C:/Users/Jonathan/OneDrive/Informática Empresarial/Algebra Lineal/Trabajos/Proyecto1/Codigo_R/R/FuncionLeontifB.R")
+FuncionLeontifB(Matriz1,Matriz2)
